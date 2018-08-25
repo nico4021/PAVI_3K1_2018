@@ -1,0 +1,12 @@
+C:\REPOPAVI\ProyectosGUIA\ClasesVB-C#\ClasePractica4_2018\VB_TPS_BugTracker\TPS_BugTracker\bin\Debug\TPS_InicioSesion.exe.config
+C:\REPOPAVI\ProyectosGUIA\ClasesVB-C#\ClasePractica4_2018\VB_TPS_BugTracker\TPS_BugTracker\obj\Debug\TPS_InicioSesion.frmLogin.resources
+C:\REPOPAVI\ProyectosGUIA\ClasesVB-C#\ClasePractica4_2018\VB_TPS_BugTracker\TPS_BugTracker\obj\Debug\TPS_InicioSesion.frmPrincipal.resources
+C:\REPOPAVI\ProyectosGUIA\ClasesVB-C#\ClasePractica4_2018\VB_TPS_BugTracker\TPS_BugTracker\obj\Debug\TPS_InicioSesion.frmBugs.resources
+C:\REPOPAVI\ProyectosGUIA\ClasesVB-C#\ClasePractica4_2018\VB_TPS_BugTracker\TPS_BugTracker\obj\Debug\TPS_InicioSesion.Resources.resources
+C:\REPOPAVI\ProyectosGUIA\ClasesVB-C#\ClasePractica4_2018\VB_TPS_BugTracker\TPS_BugTracker\obj\Debug\TPS_BugTracker.vbproj.GenerateResource.Cache
+C:\REPOPAVI\ProyectosGUIA\ClasesVB-C#\ClasePractica4_2018\VB_TPS_BugTracker\TPS_BugTracker\bin\Debug\TPS_InicioSesion.exe
+C:\REPOPAVI\ProyectosGUIA\ClasesVB-C#\ClasePractica4_2018\VB_TPS_BugTracker\TPS_BugTracker\bin\Debug\TPS_InicioSesion.pdb
+C:\REPOPAVI\ProyectosGUIA\ClasesVB-C#\ClasePractica4_2018\VB_TPS_BugTracker\TPS_BugTracker\bin\Debug\TPS_InicioSesion.xml
+C:\REPOPAVI\ProyectosGUIA\ClasesVB-C#\ClasePractica4_2018\VB_TPS_BugTracker\TPS_BugTracker\obj\Debug\TPS_InicioSesion.exe
+C:\REPOPAVI\ProyectosGUIA\ClasesVB-C#\ClasePractica4_2018\VB_TPS_BugTracker\TPS_BugTracker\obj\Debug\TPS_InicioSesion.xml
+C:\REPOPAVI\ProyectosGUIA\ClasesVB-C#\ClasePractica4_2018\VB_TPS_BugTracker\TPS_BugTracker\obj\Debug\TPS_InicioSesion.pdb
