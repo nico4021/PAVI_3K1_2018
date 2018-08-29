@@ -3,12 +3,12 @@ using System.Data;
 using System.Data.SqlClient;
 public class BDHelper
 {
-    private static BDHelper instance; //Unica instancia de la clase
+
     private string string_conexion = "Data Source=LAPTOP-US2QF1H8\\SQLEXPRESS;Initial Catalog=BugsClase04;User ID=sa;Password=sole$1404";
-   
+    private static BDHelper instance; //Unica instancia de la clase
     public static BDHelper getDBHelper()
     {
-        if (instance != null)
+        if (instance == null)
             instance = new BDHelper();
         return instance;
     }
@@ -30,7 +30,7 @@ public class BDHelper
             //  El datatable se carga con el resultado de ejecutar la sentencia en el motor de base de datos
 
             tabla.Load (cmd.ExecuteReader());
-            //  La funcion retorna el objeto datatable con 0, 1 o mas registros
+            //  La función retorna el objeto datatable con 0, 1 o mas registros
             return tabla;
         }
         catch (Exception ex)

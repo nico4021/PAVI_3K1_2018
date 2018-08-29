@@ -27,13 +27,12 @@ namespace TPS_BugTracker
 
         private void frmBugs_Load(object sender, EventArgs e)
         {
-            BDHelper helper = new BDHelper();
             //LLenar combos y limpiar grid
-            llenarCombo(cboEstados, helper.ConsultaSQL("Select * from Estados"), "n_estado", "id_estado");
-            llenarCombo(cboPrioridades, helper.ConsultaSQL("Select * from Prioridades"), "n_prioridad", "id_prioridad");
-            llenarCombo(cboCriticidades, helper.ConsultaSQL("Select * from Criticidades"), "n_criticidad", "id_criticidad");
-            llenarCombo(cboAsignadoA, helper.ConsultaSQL("Select * from users"), "n_usuario", "id_usuario");
-            llenarCombo(cboProductos, helper.ConsultaSQL("Select * from Productos"), "nombre", "id_producto");
+            llenarCombo(cboEstados, BDHelper.getDBHelper().ConsultaSQL("Select * from Estados"), "n_estado", "id_estado");
+            llenarCombo(cboPrioridades, BDHelper.getDBHelper().ConsultaSQL("Select * from Prioridades"), "n_prioridad", "id_prioridad");
+            llenarCombo(cboCriticidades, BDHelper.getDBHelper().ConsultaSQL("Select * from Criticidades"), "n_criticidad", "id_criticidad");
+            llenarCombo(cboAsignadoA, BDHelper.getDBHelper().ConsultaSQL("Select * from users"), "n_usuario", "id_usuario");
+            llenarCombo(cboProductos, BDHelper.getDBHelper().ConsultaSQL("Select * from Productos"), "nombre", "id_producto");
 
         }
 
