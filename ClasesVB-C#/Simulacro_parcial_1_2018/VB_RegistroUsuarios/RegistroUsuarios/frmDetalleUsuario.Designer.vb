@@ -41,7 +41,7 @@ Partial Class frmDetalleUsuario
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(80, 23)
         Me.btnCerrar.TabIndex = 33
-        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.Text = "Volver"
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
         'Label5

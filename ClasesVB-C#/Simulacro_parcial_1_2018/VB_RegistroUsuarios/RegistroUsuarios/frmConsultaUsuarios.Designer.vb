@@ -41,17 +41,17 @@ Partial Class frmConsultaUsuarios
         Me.dgvUsuarios.AllowUserToAddRows = False
         Me.dgvUsuarios.AllowUserToDeleteRows = False
         Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUsuarios.Location = New System.Drawing.Point(26, 115)
+        Me.dgvUsuarios.Location = New System.Drawing.Point(6, 115)
         Me.dgvUsuarios.Name = "dgvUsuarios"
         Me.dgvUsuarios.ReadOnly = True
         Me.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvUsuarios.Size = New System.Drawing.Size(372, 192)
+        Me.dgvUsuarios.Size = New System.Drawing.Size(401, 192)
         Me.dgvUsuarios.TabIndex = 8
         '
         'btnSalir
         '
         Me.btnSalir.Image = Global.RegistroUsuarios.My.Resources.Resources.salir
-        Me.btnSalir.Location = New System.Drawing.Point(385, 331)
+        Me.btnSalir.Location = New System.Drawing.Point(379, 331)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(40, 40)
         Me.btnSalir.TabIndex = 15
@@ -85,7 +85,7 @@ Partial Class frmConsultaUsuarios
         '
         'btnConsultar
         '
-        Me.btnConsultar.Location = New System.Drawing.Point(311, 86)
+        Me.btnConsultar.Location = New System.Drawing.Point(320, 86)
         Me.btnConsultar.Name = "btnConsultar"
         Me.btnConsultar.Size = New System.Drawing.Size(87, 23)
         Me.btnConsultar.TabIndex = 3
@@ -112,7 +112,7 @@ Partial Class frmConsultaUsuarios
         'btnDetalleUsuario
         '
         Me.btnDetalleUsuario.Image = Global.RegistroUsuarios.My.Resources.Resources.comentar
-        Me.btnDetalleUsuario.Location = New System.Drawing.Point(12, 331)
+        Me.btnDetalleUsuario.Location = New System.Drawing.Point(18, 331)
         Me.btnDetalleUsuario.Name = "btnDetalleUsuario"
         Me.btnDetalleUsuario.Size = New System.Drawing.Size(40, 40)
         Me.btnDetalleUsuario.TabIndex = 14

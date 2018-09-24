@@ -47,17 +47,17 @@
             this.dgvUsuarios.AllowUserToAddRows = false;
             this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Location = new System.Drawing.Point(26, 115);
+            this.dgvUsuarios.Location = new System.Drawing.Point(6, 115);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(372, 192);
+            this.dgvUsuarios.Size = new System.Drawing.Size(401, 192);
             this.dgvUsuarios.TabIndex = 8;
             // 
             // btnSalir
             // 
             this.btnSalir.Image = global::RegistroUsuarios.Properties.Resources.salir;
-            this.btnSalir.Location = new System.Drawing.Point(385, 331);
+            this.btnSalir.Location = new System.Drawing.Point(379, 331);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(40, 40);
             this.btnSalir.TabIndex = 12;
@@ -91,7 +91,7 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(311, 86);
+            this.btnConsultar.Location = new System.Drawing.Point(320, 86);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(87, 23);
             this.btnConsultar.TabIndex = 3;
@@ -136,11 +136,12 @@
             // btnDetalleUsuario
             // 
             this.btnDetalleUsuario.Image = global::RegistroUsuarios.Properties.Resources.comentar;
-            this.btnDetalleUsuario.Location = new System.Drawing.Point(12, 331);
+            this.btnDetalleUsuario.Location = new System.Drawing.Point(18, 331);
             this.btnDetalleUsuario.Name = "btnDetalleUsuario";
             this.btnDetalleUsuario.Size = new System.Drawing.Size(40, 40);
             this.btnDetalleUsuario.TabIndex = 9;
             this.btnDetalleUsuario.UseVisualStyleBackColor = true;
+            this.btnDetalleUsuario.Click += new System.EventHandler(this.btnDetalleUsuario_Click);
             // 
             // frmConsultaUsuarios
             // 
