@@ -58,7 +58,7 @@
         'Validar si el combo 'Asignado a' esta seleccionado.
         If Not String.IsNullOrEmpty(cbo_asignadoA.Text) Then
             filters.Add(cbo_asignadoA.SelectedValue)
-            str += "AND asignado_a=@param4 "
+            str += "AND id_asignado_a=@param4 "
         Else
             filters.Add(Nothing)
         End If

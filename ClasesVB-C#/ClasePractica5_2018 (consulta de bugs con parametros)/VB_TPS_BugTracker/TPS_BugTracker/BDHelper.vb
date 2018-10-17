@@ -2,7 +2,8 @@
 Imports System.Data.SqlClient
 
 Public Class BDHelper
-    private string string_conexion = "Data Source=LAPTOP-US2QF1H8\\SQLEXPRESS;Initial Catalog=BugsClase05;User ID=sa;Password=sole$1404";
+    
+    Private string_conexion As String = "Data Source=.\SQLEXPRESS;Initial Catalog=BugsClase05;Persist Security Info=True;User ID=sa;Password=sole$1404"
 
     Private Shared instance As BDHelper 'Unica instancia de la clase
 
