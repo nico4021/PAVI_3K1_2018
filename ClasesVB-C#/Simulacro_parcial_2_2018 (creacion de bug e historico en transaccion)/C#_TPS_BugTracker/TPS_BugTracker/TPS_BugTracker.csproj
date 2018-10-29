@@ -65,7 +65,7 @@
     <Compile Include="DataLayer\DAOs\PerfilDao.cs" />
     <Compile Include="DataLayer\DAOs\ProductoDao.cs" />
     <Compile Include="DataLayer\DAOs\UsuarioDao.cs" />
-    <Compile Include="DataLayer\Helper\BDHelper.cs" />
+    <Compile Include="DataLayer\Helper\DataManager.cs" />
     <Compile Include="BusinessLayer\Entities\Bug.cs" />
     <Compile Include="BusinessLayer\Entities\HistorialBug.cs" />
     <Compile Include="BusinessLayer\Services\BugService.cs" />

@@ -30,16 +30,24 @@ namespace TPS_BugTracker.DataLayer.DAOs
             {
                 dm.Open();
 
-                string sql = "   SELECT TOP 20 bug.id_bug, bug.titulo, bug.descripcion, pro.nombre, bug.fecha_alta, n_estado as estado, usr.n_usuario as asignado_a, n_prioridad, cri.n_criticidad, pro.id_producto, pri.id_prioridad, cri.id_criticidad" +
-                    "   FROM  bugs bug" +
-                    "   INNER JOIN Historiales_Bug his ON bug.id_bug = his.id_bug" +
-                    "   INNER JOIN Estados est ON his.id_estado = est.id_estado" +
-                    "   LEFT JOIN Users usr ON his.asignado_a = usr.id_usuario" +
-                    "   INNER JOIN Productos pro ON bug.id_producto = pro.id_producto" +
-                    "   INNER JOIN Prioridades pri ON bug.id_prioridad = pri.id_prioridad" +
-                    "   INNER JOIN Criticidades cri ON bug.id_criticidad = cri.id_criticidad" +
-                    "   WHERE his.id_detalle = (SELECT MAX(id_detalle) FROM Historiales_Bug his2 WHERE bug.id_bug = his2.id_bug)" +
-                    "         AND bug.id_bug = " + id.ToString();
+                string sql = "SELECT " +
+                " b.id_bug," +
+                " b.titulo," +
+                " b.descripcion," +
+                " b.id_producto," +
+                " b.id_prioridad," +
+                " b.fecha_alta," +
+                " b.id_criticidad," +
+                " b.id_asignado_a, " +
+                " pro.nombre," +
+                " pri.n_prioridad," +
+                " cri.n_criticidad," +
+                " e.n_estado FROM bugs b, Productos pro, Prioridades pri, Criticidades cri, Estados e " +
+                " WHERE b.id_producto = pro.id_producto" +
+                " AND b.id_prioridad = pri.id_prioridad" +
+                " AND b.id_criticidad = cri.id_criticidad"+
+                " AND b.id_estado = e.id_estado" +
+                   "         AND b.id_bug = " + id.ToString();
 
 
                 bug = mapBug(dm.ConsultaSQL(sql).Rows[0]);
@@ -75,6 +83,7 @@ namespace TPS_BugTracker.DataLayer.DAOs
                 " b.id_prioridad," +
                 " b.fecha_alta," +
                 " b.id_criticidad," +
+                " b.id_asignado_a, " +
                 " pro.nombre," +
                 " pri.n_prioridad," +
                 " cri.n_criticidad," +
@@ -83,7 +92,7 @@ namespace TPS_BugTracker.DataLayer.DAOs
                 " AND b.id_prioridad = pri.id_prioridad" +
                 " AND b.id_criticidad = cri.id_criticidad"+
                 " AND b.id_estado = e.id_estado";
-                 MessageBox.Show(sql, "muestro la sentencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
                  // Validamos filtro de fechas
                  if (parametros[0] != null && parametros[1] != null)
                      sql += " AND (b.fecha_alta>=@param1 AND b.fecha_alta<=@param2) ";
@@ -131,8 +140,7 @@ namespace TPS_BugTracker.DataLayer.DAOs
             oBug.descripcion = row["descripcion"].ToString();
             oBug.fecha_alta = Convert.ToDateTime(row["fecha_alta"].ToString());
             oBug.n_producto = row["nombre"].ToString();
-            oBug.n_estado = row["n_estado"].ToString();
-            oBug.n_asignadoa = row["asignado_a"].ToString();
+            oBug.n_estado = row["n_estado"].ToString();            
             oBug.n_prioridad = row["n_prioridad"].ToString();
             oBug.n_criticidad = row["n_criticidad"].ToString();
             return oBug;
@@ -152,7 +160,7 @@ namespace TPS_BugTracker.DataLayer.DAOs
             oBug.n_producto = row["nombre"].ToString();
             oBug.n_criticidad = row["n_criticidad"].ToString();
             oBug.n_prioridad = row["n_prioridad"].ToString();
-            oBug.n_estado = row["estado"].ToString();
+            oBug.n_estado = row["n_estado"].ToString();
 
             return oBug;
         }
@@ -206,7 +214,7 @@ namespace TPS_BugTracker.DataLayer.DAOs
             try
             {
                 string sql_con_parametros = "INSERT INTO Bugs(titulo,descripcion,id_producto,id_prioridad,id_criticidad,fecha_alta, id_estado) " +
-                            "   VALUES(@titulo,@descripcion,@id_producto,@id_prioridad,@id_criticidad,GetDate(),@id_estado);" +
+                            "   VALUES(@titulo,@descripcion,@id_producto,@id_prioridad,@id_criticidad,GetDate(),1);" +
                             "   select SCOPE_IDENTITY();";
 
                 List<SqlParameter> parametros = new List<SqlParameter>();
@@ -228,7 +236,7 @@ namespace TPS_BugTracker.DataLayer.DAOs
                oBug.id_bug = dm.EjecutarSQL(sql_con_parametros, parametros);
 
                 string sqlDetalle = " INSERT INTO BugsHistorico(id_bug, titulo, descripcion, id_producto, id_prioridad, id_criticidad, id_estado, fecha_historico) " +
-                            "    VALUES(@id_bug, @titulo ,@descripcion,@id_producto,@id_prioridad, @id_criticidad, @id_estado, getdate())";
+                            "    VALUES(@id_bug, @titulo ,@descripcion,@id_producto,@id_prioridad, @id_criticidad, 1, getdate())";
 
                 List<SqlParameter> paramDetalle = new List<SqlParameter>();
                 parametros.Add(new SqlParameter("id_bug", oBug.id_bug));
@@ -242,10 +250,8 @@ namespace TPS_BugTracker.DataLayer.DAOs
                // dm.EjecutarSQL(sqlDetalle, paramDetalle);
 
 
-                string sqlDetalle_sin_parametros = "INSERT INTO BugsHistorico(id_bug,titulo,descripcion,id_producto,id_prioridad,id_criticidad, id_estado, id_responsable, fecha_historico)" + "   VALUES(" + oBug.id_bug + "," + "'" + oBug.titulo + "'" + "," + "'" + oBug.descripcion + "'" + "," + oBug.id_producto + "," + oBug.id_prioridad + "," + oBug.id_criticidad + "," + oBug.id_estado + "," + "null" + "," + "GETDATE()" + ")";
-                MessageBox.Show(sqlDetalle_sin_parametros, "muestro la sentencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                List<SqlParameter> paramdetalle = new List<SqlParameter>();
-            
+                string sqlDetalle_sin_parametros = "INSERT INTO BugsHistorico(id_bug,titulo,descripcion,id_producto,id_prioridad,id_criticidad, id_estado, id_responsable, fecha_historico)" + "   VALUES(" + oBug.id_bug + "," + "'" + oBug.titulo + "'" + "," + "'" + oBug.descripcion + "'" + "," + oBug.id_producto + "," + oBug.id_prioridad + "," + oBug.id_criticidad + "," + 1+ "," + "null" + "," + "GETDATE()" + ")";
+                
                 dm.EjecutarSQL(sqlDetalle_sin_parametros, paramDetalle);
 
               dm.Commit();
