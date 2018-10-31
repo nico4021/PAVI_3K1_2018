@@ -128,10 +128,7 @@ public class DataManager
 
             // Retorna el resultado de ejecutar el comando
             rtdo = Convert.ToInt32(cmd.ExecuteScalar() ?? 0);
-            MessageBox.Show(Convert.ToString(cmd.ExecuteScalar() ?? 0), "muestro el identity", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // oBug.id_bug = dm.EjecutarSQL(sql_con_parametros, parametros);
-
-            
+                       
         }
         catch (Exception ex)
         {

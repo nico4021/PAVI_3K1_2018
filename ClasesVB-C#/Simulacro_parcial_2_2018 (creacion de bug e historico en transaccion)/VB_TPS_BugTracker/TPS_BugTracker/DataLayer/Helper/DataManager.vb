@@ -87,7 +87,6 @@ Public Class DataManager
             cmd.CommandText = strSql
             If parametros IsNot Nothing Then cmd.Parameters.AddRange(parametros.ToArray())
             rtdo = Convert.ToInt32(If(cmd.ExecuteScalar(), 0))
-            MessageBox.Show(Convert.ToString(If(cmd.ExecuteScalar(), 0)), "muestro el identity", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
             Throw ex
         End Try
